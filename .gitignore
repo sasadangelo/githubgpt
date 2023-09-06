@@ -1,0 +1,4 @@
+venv
+repos
+sasadangelo_runningcalculators*
+src/utils/__pycache__/*

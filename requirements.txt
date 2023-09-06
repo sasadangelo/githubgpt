@@ -1,0 +1,10 @@
+deeplake
+langchain
+openai
+pathspec
+python-dotenv
+streamlit
+streamlit_chat
+tiktoken
+utils
+sentence-transformers
