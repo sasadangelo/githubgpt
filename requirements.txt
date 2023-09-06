@@ -1,10 +1,5 @@
-deeplake
-langchain
-openai
-pathspec
-python-dotenv
 streamlit
+langchain
+pathspec
 streamlit_chat
-tiktoken
-utils
 sentence-transformers

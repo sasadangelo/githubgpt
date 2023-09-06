@@ -1,13 +1,10 @@
-from utils.Tokens import apikey
 import requests
-import openai
 import os
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import pipeline
 
-openai.api_key = apikey
 model = SentenceTransformer('all-MiniLM-L6-v2')
 nlp = pipeline("zero-shot-classification")
 
@@ -64,6 +61,7 @@ def similarity_search(query, embeddings, lines, k=30):
     response_data = ""
     query_embedding = model.encode([query])
     similarities = cosine_similarity(query_embedding, embeddings)
+    print(similarities)
     top_k_indices = similarities[0].argsort()[-k:][::-1]
 
     for index in top_k_indices:

@@ -1,10 +1,6 @@
 import os
 import pathspec
 import subprocess
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores import Chroma
-import chromadb
 from utils.backend import create_embeddings_and_lines, get_repo_content
 
 def clone_repository(repo_url, local_path):

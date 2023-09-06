@@ -1,10 +1,5 @@
 import argparse
 import os
-from langchain.vectorstores import DeepLake
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-import openai
 import streamlit as st
 from streamlit_chat import message
 from utils.backend import load_embeddings_and_lines, similarity_search, answers_agent
@@ -28,7 +23,6 @@ def run_chat_app(repo_url):
 
     # If there is user input, search for a response using the search_db function
     if user_input:
-        #output = search_db(db, user_input)
         response_data = similarity_search(user_input, embeddings, lines)
         answer = answers_agent(user_input, response_data)
         st.session_state.past.append(user_input)
